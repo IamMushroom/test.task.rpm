@@ -7,7 +7,7 @@ BuildArch:      noarch
 License:        GPLv3
 Source0:        %{name}-%{version}.tar.xz
 
-BuildRequires:  golang
+BuildRequires:  
 Requires:       golang
 
 %description
@@ -22,10 +22,11 @@ make compile
 
 
 %install
-make copy
+make copy %{buildroot}%{_bindir}
 
 %files
+%{_bindir}/%{name}
 
 %changelog
 * Wed Jun 08 2022 IamMushroom <eratoster@gmail.com>
-- First release %changelog
+- First release
